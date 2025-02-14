@@ -3,45 +3,53 @@ class Program
 {
     static void Main(string[] args)
     {
-        Factorial(5);
-        is_prime(5);
+        Factorial(-5);
+        is_prime(-5);
 
     }
         static void Factorial(int n)
     {
-        int shart=5;
-        if(shart==5)
+        if(n<0)
         {
-        int f=1;
+            Console.WriteLine("The input is incorrect");
+            return;
+        }
+        long f=1;
         for(int i=1;i<n+1;i++)
         {
             f*=i;
-        }            
-        }
-        Console.WriteLine(f);
-    }
-        static bool is_prime(int n)
-    {
-        bool flag=true;
-        if(flag==true)
+        }  
+        if(f<=0)
         {
+            Console.WriteLine("The output is wrong");
+            return;
+        }
+        if(f>=1)
+        {
+            Console.WriteLine(f);
+        }          
+        
+    }
+    static void is_prime(int n)
+    {
+        if(n<=0)
+        {
+            Console.WriteLine("The input is incorrect");
+        }
         if(n==2)
         {
-            return true;
+            Console.WriteLine("true");
         }
-        if(n<2)
+        if(n==1)
         {
-            return false;
+            Console.WriteLine("false");
         }
         for(int i=2;i<n;i++)
         {
-            if(is_divisible(n,i)==true)
+            if(n%i==0)
             {
-                return false;
+                Console.WriteLine("false");
             }
-        }            
         }
-
-        return true;
     }
 }
