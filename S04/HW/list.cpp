@@ -32,14 +32,15 @@ class list
         }
         void resize(int newsize)
         {
+
             m_size=newsize;
-            int* newlist=(int*)malloc(sizeof(int)*newsize);
+            int* newlist=(int*)malloc(sizeof(int)*m_size);
             for(int i=0;i<m_size;i++)
             {
                 newlist[i]=m_pnums[i];
             }
             free(m_pnums);
-            m_pnums=newlist;
+            m_pnums=newlist;        
             free(newlist);
 
         }
@@ -47,18 +48,30 @@ class list
         {
             cout<<m_size<<endl;
         }
+        int count_n(int n)
+        {
+            int count=0;
+            for(int i=0;i<m_size;i++)
+            {
+                if(m_pnums[i]==n)
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
         void del(int n)
         {
             int* newlist=(int*)malloc(sizeof(int) * (m_size-1));
+            int j=0;
             for(int i=0;i<m_size;i++)
             {
                 if(m_pnums[i]!=n)
                 {
-                    *newlist=m_pnums[i];
-                    newlist++;
+                    newlist[j]=m_pnums[i];
+                    j++;
                 }
             }
-            newlist-=m_size-1;
             m_size-=1;
             free(m_pnums);
             m_pnums=newlist;
@@ -88,6 +101,11 @@ int main()
     int pop=list2.pop();
     cout<<"list after pop :";
     list2.print_list();
-    cout<<"pop: "<<pop;
+    cout<<"pop: "<<pop<<endl;
+    cout<<"list after append 3 :";
+    list2.append(3);
+    list2.print_list();
+    cout<<"the number of 3 in list : ";
+    cout<<list2.count_n(3);
     
 }
