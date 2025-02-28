@@ -29,7 +29,6 @@ public:
             }
         }
         cout << endl;
-
     }
     void append(int n)
     {
@@ -59,7 +58,7 @@ public:
         int c=m_pnums[m_size-1];
         m_size++;
         resize();
-        int badi = m_pnums[index];
+        int badi = m_pnums[index]; 
         m_pnums[index] = n;
         int badi2 = m_pnums[index + 1];
         m_pnums[index + 1] = badi;

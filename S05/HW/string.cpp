@@ -109,23 +109,24 @@ class string1
 };
 int main()
 {
-    char* pch="fateme";
+    char pch[]="fateme";
     string1 str(pch);
     cout<<"normal str :" ;
     str.print_string();
     string1 str2;
-    str2.assign("reyhane");
+    char pch2[]="reyhane";
+    str2.assign(pch2);
     cout<<"str2 String value given by assign function : ";
     str2.print_string();
-    str.append(" sina");
+    char pch3[]=" sina";
+    str.append(pch3);
     cout<<"str after append sina with a function whose input is char* : ";
     str.print_string();
-    char* pch2=" sana";
-    string1 str3(pch2);
+    char pch4[]=" sana";
+    string1 str3(pch4);
     str.append(str3);
     cout<<"str after append sana with a function whose input is object from string1 class : ";
     str.print_string();
     cout<<"str from c_str method : "<< str.c_str()<<endl;
     cout<<"str size : "<<str.size()<<endl;
-
 }
