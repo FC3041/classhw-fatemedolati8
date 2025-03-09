@@ -56,7 +56,7 @@ class Program
         revers_jomle_kalame("salam khobi?",out strrev);
         System.Console.WriteLine(strrev);
         string strrev2;
-        revers_jomle("salam khobi? chetori che khbar?",out strrev2);
+        revers_jomle("salam khobi? chetori che khbar? fisnkfi",out strrev2);
         System.Console.WriteLine(strrev2);
     }
 }
